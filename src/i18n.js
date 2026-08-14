@@ -29,7 +29,8 @@ export const translations = {
     termsOfService: "Terms of Service",
     allRightsReserved: "All rights reserved.",
     tagline: "A premium movie rating clone concept.",
-    watchTrailer: "Watch Trailer"
+    watchTrailer: "Watch Trailer",
+    newProjects: "New Projects"
   },
   uk: {
     movies: "Фільми",
@@ -61,7 +62,8 @@ export const translations = {
     termsOfService: "Умови використання",
     allRightsReserved: "Всі права захищені.",
     tagline: "Преміальний концепт рейтингу кіно.",
-    watchTrailer: "Дивитись Трейлер"
+    watchTrailer: "Дивитись Трейлер",
+    newProjects: "Нові Проєкти"
   },
   fr: {
     movies: "Films",
@@ -93,7 +95,8 @@ export const translations = {
     termsOfService: "Conditions d'utilisation",
     allRightsReserved: "Tous droits réservés.",
     tagline: "Un concept premium de notation de films.",
-    watchTrailer: "Bande-annonce"
+    watchTrailer: "Bande-annonce",
+    newProjects: "Nouveaux Projets"
   },
   de: {
     movies: "Filme",
@@ -125,7 +128,8 @@ export const translations = {
     termsOfService: "Nutzungsbedingungen",
     allRightsReserved: "Alle Rechte vorbehalten.",
     tagline: "Ein Premium-Filmbewertungskonzept.",
-    watchTrailer: "Trailer Ansehen"
+    watchTrailer: "Trailer Ansehen",
+    newProjects: "Neue Projekte"
   },
   es: {
     movies: "Películas",
@@ -157,7 +161,8 @@ export const translations = {
     termsOfService: "Términos de servicio",
     allRightsReserved: "Todos los derechos reservados.",
     tagline: "Un concepto premium de calificación.",
-    watchTrailer: "Ver Tráiler"
+    watchTrailer: "Ver Tráiler",
+    newProjects: "Nuevos Proyectos"
   },
   it: {
     movies: "Film",
@@ -189,6 +194,7 @@ export const translations = {
     termsOfService: "Condizioni d'uso",
     allRightsReserved: "Tutti i diritti riservati.",
     tagline: "Un concetto premium di recensioni.",
-    watchTrailer: "Guarda Trailer"
+    watchTrailer: "Guarda Trailer",
+    newProjects: "Nuovi Progetti"
   }
 };

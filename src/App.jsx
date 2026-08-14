@@ -134,6 +134,7 @@ const MainApp = () => {
         <Route path="/cartoons" element={<MediaGrid title={t('cartoons')} items={cartoons} />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news/:id" element={<NewsArticle />} />
+        <Route path="/upcoming" element={<NewProjects />} />
         <Route path="/media/:id" element={<MediaDetails localReviews={localReviews} setLocalReviews={setLocalReviews} />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/profile" element={<UserPanel />} />
@@ -287,6 +288,67 @@ const NewsArticle = () => {
   );
 };
 
+const NewProjects = () => {
+  const { t } = useContext(LanguageContext);
+  const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://api.tvmaze.com/schedule/web')
+      .then(res => res.json())
+      .then(data => {
+        // filter out items without images and map to our format
+        const upcoming = data.filter(item => item._embedded?.show?.image).map((item, i) => ({
+          id: `upcoming_${i}`,
+          title: item._embedded.show.name,
+          poster: item._embedded.show.image.original,
+          criticsScore: item._embedded.show.rating?.average ? parseInt(item._embedded.show.rating.average * 10) : 85,
+          audienceScore: 90,
+          year: item.airdate,
+          genre: item._embedded.show.genres?.join(' / ') || 'Drama'
+        }));
+        setProjects(upcoming);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="details-container animate-fade-in" style={{ padding: '8rem 4rem 4rem', minHeight: '80vh' }}>
+      <h1 className="section-title">{t('newProjects')}</h1>
+      {loading ? (
+        <p style={{ color: 'var(--text-muted)' }}>Loading live data from API...</p>
+      ) : (
+        <div className="movie-grid">
+          {projects.map(media => (
+            <div key={media.id} className="movie-card" onClick={() => alert('Live API item! ' + media.title)}>
+              <img src={media.poster} alt={media.title} className="movie-poster" />
+              <div className="movie-info">
+                <div className="movie-scores">
+                  <div className="score-container">
+                    {media.criticsScore >= 80 ? <FreshPopcorn /> : <RottenTomato />}
+                    <span className={media.criticsScore >= 80 ? 'score-fresh' : 'score-rotten'}>{media.criticsScore}%</span>
+                  </div>
+                  <div className="score-container">
+                    <AudiencePopcorn />
+                    <span>{media.audienceScore}%</span>
+                  </div>
+                </div>
+                <h3 className="movie-title" style={{ marginTop: '10px' }}>{media.title}</h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Airing: {media.year}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const MediaDetails = ({ localReviews, setLocalReviews }) => {
   const { id } = useParams();
   const { t } = useContext(LanguageContext);
@@ -359,15 +421,21 @@ const MediaDetails = ({ localReviews, setLocalReviews }) => {
           </p>
           
           <div style={{ marginTop: '2rem', display: 'flex', gap: '15px' }}>
-            <a 
-              href={`https://www.youtube.com/results?search_query=${encodeURIComponent(selectedMedia.title + ' ' + selectedMedia.year + ' trailer')}`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-primary"
-              style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
-            >
-              ▶ {t('watchTrailer')}
-            </a>
+            {selectedMedia.trailerId ? (
+              <a href="#trailer" className="btn-primary" style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>
+                ▶ {t('watchTrailer')}
+              </a>
+            ) : (
+              <a 
+                href={`https://www.youtube.com/results?search_query=${encodeURIComponent(selectedMedia.title + ' ' + selectedMedia.year + ' trailer')}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-primary"
+                style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+              >
+                ▶ {t('watchTrailer')}
+              </a>
+            )}
             <a 
               href={`https://www.imdb.com/find?q=${encodeURIComponent(selectedMedia.title)}`} 
               target="_blank" 
@@ -390,6 +458,22 @@ const MediaDetails = ({ localReviews, setLocalReviews }) => {
           </div>
         </div>
       </div>
+
+      {selectedMedia.trailerId && (
+        <div id="trailer" style={{ maxWidth: '1400px', margin: '4rem auto 0', padding: '0 4rem' }}>
+          <h2 className="section-title">Official Trailer</h2>
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
+            <iframe 
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              src={`https://www.youtube.com/embed/${selectedMedia.trailerId}`} 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen>
+            </iframe>
+          </div>
+        </div>
+      )}
 
       <div className="reviews-section" style={{ maxWidth: '1400px', margin: '4rem auto 0', padding: '3rem 4rem' }}>
         
@@ -491,6 +575,7 @@ const Navbar = ({ onAuth }) => {
         <Link to="/movies" className="nav-link">{t('movies')}</Link>
         <Link to="/tvshows" className="nav-link">{t('tvShows')}</Link>
         <Link to="/cartoons" className="nav-link">{t('cartoons')}</Link>
+        <Link to="/upcoming" className="nav-link" style={{ color: 'var(--accent-fresh)', fontWeight: 'bold' }}>{t('newProjects')}</Link>
         <Link to="/news" className="nav-link">{t('news')}</Link>
       </div>
       <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
