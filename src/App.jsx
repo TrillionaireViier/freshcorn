@@ -437,13 +437,13 @@ const MediaDetails = ({ localReviews, setLocalReviews }) => {
               </a>
             )}
             <a 
-              href={`https://www.imdb.com/find?q=${encodeURIComponent(selectedMedia.title)}`} 
+              href={`https://www.themoviedb.org/search?query=${encodeURIComponent(selectedMedia.title)}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-outline"
               style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
             >
-              ℹ️ IMDb
+              ℹ️ TMDb
             </a>
           </div>
           
@@ -540,7 +540,17 @@ const InfoPage = ({ type }) => {
 
   const renderInfoPage = () => {
     switch (type) {
-      case 'about': return <div className="info-content">Our Mission: Provide authentic movie ratings.</div>;
+      case 'about': return (
+        <div className="info-content">
+          <p>Our Mission: Provide authentic movie ratings and reviews for cinema enthusiasts.</p>
+          <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cb3fd90ce2809dc3f140d77802877a5eb40866504a58b99182dbaf0.svg" alt="TMDb Logo" style={{ width: '80px', height: 'auto' }} />
+            <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+              "This product uses the TMDb API but is not endorsed or certified by TMDb."
+            </p>
+          </div>
+        </div>
+      );
       case 'contact': return <div className="info-content">Contact us at support@freshpopcorn.com</div>;
       case 'privacy': return <div className="info-content">We respect your privacy and secure your data.</div>;
       case 'terms': return <div className="info-content">By using the site, you agree to our rules.</div>;
