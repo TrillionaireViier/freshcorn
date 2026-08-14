@@ -4,7 +4,7 @@ export const movies = [
     genre: "Action / Sci-Fi", criticsScore: 87, audienceScore: 91,
     synopsis: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
     director: "Christopher Nolan", cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
-    poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -13,7 +13,7 @@ export const movies = [
     genre: "Action / Crime", criticsScore: 94, audienceScore: 94,
     synopsis: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
     director: "Christopher Nolan", cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-    poster: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -22,7 +22,7 @@ export const movies = [
     genre: "Adventure / Sci-Fi", criticsScore: 73, audienceScore: 86,
     synopsis: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     director: "Christopher Nolan", cast: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
-    poster: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -31,7 +31,7 @@ export const movies = [
     genre: "Biography / Drama", criticsScore: 93, audienceScore: 91,
     synopsis: "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
     director: "Christopher Nolan", cast: ["Cillian Murphy", "Emily Blunt", "Matt Damon"],
-    poster: "https://images.unsplash.com/photo-1533613220915-609f661a6fe1?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1533613220915-609f661a6fe1?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -40,7 +40,7 @@ export const movies = [
     genre: "Action / Adventure", criticsScore: 93, audienceScore: 95,
     synopsis: "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
     director: "Denis Villeneuve", cast: ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
-    poster: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80",
     isTrending: false, isInTheaters: true
   },
@@ -49,7 +49,7 @@ export const movies = [
     genre: "Animation / Action", criticsScore: 95, audienceScore: 94,
     synopsis: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence.",
     director: "Joaquim Dos Santos", cast: ["Shameik Moore", "Hailee Steinfeld", "Oscar Isaac"],
-    poster: "https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -58,7 +58,7 @@ export const movies = [
     genre: "Action / Adventure", criticsScore: 94, audienceScore: 88,
     synopsis: "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes.",
     director: "Daniel Kwan, Daniel Scheinert", cast: ["Michelle Yeoh", "Ke Huy Quan", "Stephanie Hsu"],
-    poster: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -67,7 +67,7 @@ export const movies = [
     genre: "Drama / Thriller", criticsScore: 99, audienceScore: 90,
     synopsis: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
     director: "Bong Joon Ho", cast: ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong"],
-    poster: "https://images.unsplash.com/photo-1514119412350-e1731400a58b?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1514119412350-e1731400a58b?w=1600&q=80",
     isTrending: false, isInTheaters: true
   },
@@ -172,7 +172,7 @@ export const cartoons = [
     genre: "Animation / Action", criticsScore: 100, audienceScore: 96,
     synopsis: "Set in utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League champions-and the power that will tear them apart.",
     director: "Pascal Charrue, Arnaud Delord", cast: ["Hailee Steinfeld", "Ella Purnell", "Kevin Alejandro"],
-    poster: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BYjA2NzhlMDItNWRmZC00MzRjLWE3ZjAtZjBlZDAwOWY2ODdjXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -181,7 +181,7 @@ export const cartoons = [
     genre: "Animation / Action", criticsScore: 100, audienceScore: 98,
     synopsis: "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar.",
     director: "Michael Dante DiMartino, Bryan Konietzko", cast: ["Zach Tyler Eisen", "Mae Whitman", "Jack De Sena"],
-    poster: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BMDMwMThjYWYtY2Q2OS00OGM2LTlkODQtNDJlZTZmMjAyYmFhXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -190,7 +190,7 @@ export const cartoons = [
     genre: "Animation / Sci-Fi", criticsScore: 90, audienceScore: 88,
     synopsis: "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
     director: "Justin Roiland, Dan Harmon", cast: ["Justin Roiland", "Chris Parnell", "Spencer Grammer"],
-    poster: "https://images.unsplash.com/photo-1563121516-24ee8dfb5cb2?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BZGQyZjk2MzMtMTcyNC00NGU3LTlmNjItNDExMWM4ZDFhYmQ2XkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1563121516-24ee8dfb5cb2?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -199,7 +199,7 @@ export const cartoons = [
     genre: "Animation / Adventure", criticsScore: 98, audienceScore: 89,
     synopsis: "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
     director: "Pete Docter", cast: ["Amy Poehler", "Bill Hader", "Lewis Black"],
-    poster: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=1600&q=80",
     isTrending: false, isInTheaters: false
   },
@@ -208,7 +208,7 @@ export const cartoons = [
     genre: "Animation / Adventure", criticsScore: 100, audienceScore: 92,
     synopsis: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
     director: "John Lasseter", cast: ["Tom Hanks", "Tim Allen", "Don Rickles"],
-    poster: "https://images.unsplash.com/photo-1596728464673-db0f61406c11?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1596728464673-db0f61406c11?w=1600&q=80",
     isTrending: false, isInTheaters: false
   },
@@ -217,7 +217,7 @@ export const cartoons = [
     genre: "Animation / Fantasy", criticsScore: 97, audienceScore: 96,
     synopsis: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
     director: "Hayao Miyazaki", cast: ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki"],
-    poster: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=800&q=80",
+    poster: "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_.jpg",
     backdrop: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=1600&q=80",
     isTrending: false, isInTheaters: true
   }
