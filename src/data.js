@@ -167,9 +167,45 @@ export const tvShows = [
 ];
 
 export const reviews = [
+  // Movies
   { id: 1, mediaId: 'm1', author: "Daily Cinema", text: "A breathtaking visual masterpiece that redefines the genre.", score: 95 },
   { id: 2, mediaId: 'm1', author: "The Reel Review", text: "Action-packed and emotionally resonant. A must-watch.", score: 90 },
-  { id: 3, mediaId: 't1', author: "TV Guide", text: "Genuinely gripping television that defined an era.", score: 100 }
+  { id: 4, mediaId: 'm2', author: "Gotham Gazette", text: "Heath Ledger's performance is legendary. A dark, brooding masterpiece.", score: 98 },
+  { id: 5, mediaId: 'm2', author: "Cinephile Weekly", text: "The greatest superhero movie ever made. Period.", score: 96 },
+  { id: 6, mediaId: 'm3', author: "Sci-Fi Digest", text: "A visually stunning emotional rollercoaster through space and time.", score: 85 },
+  { id: 7, mediaId: 'm3', author: "The Stellar Critic", text: "Nolan pushes the boundaries of practical effects and narrative.", score: 88 },
+  { id: 8, mediaId: 'm4', author: "Historical Times", text: "Cillian Murphy delivers the performance of a lifetime.", score: 95 },
+  { id: 9, mediaId: 'm4', author: "Film Aficionado", text: "A dense, brilliant, and terrifying look at the dawn of the atomic age.", score: 92 },
+  { id: 10, mediaId: 'm5', author: "Desert Sun Reviews", text: "A massive, sweeping sci-fi epic that surpasses the first part.", score: 96 },
+  { id: 11, mediaId: 'm5', author: "Geek Monthly", text: "Villeneuve has crafted the definitive adaptation of Herbert's world.", score: 94 },
+  { id: 12, mediaId: 'm6', author: "Animation Nation", text: "Visually revolutionary. The art style alone is worth the price of admission.", score: 97 },
+  { id: 13, mediaId: 'm6', author: "Hero Hub", text: "A sequel that takes everything great about the original and amplifies it.", score: 93 },
+  { id: 14, mediaId: 'm7', author: "IndieWire", text: "Pure, unadulterated chaotic brilliance. Michelle Yeoh is unstoppable.", score: 99 },
+  { id: 15, mediaId: 'm7', author: "The Multiverse Post", text: "A beautiful exploration of family wrapped in sci-fi absurdity.", score: 90 },
+  { id: 16, mediaId: 'm8', author: "Global Cinema", text: "A razor-sharp critique of capitalism masked as a thrilling dark comedy.", score: 100 },
+  { id: 17, mediaId: 'm8', author: "Director's Cut", text: "Bong Joon Ho's magnum opus. Flawless execution.", score: 98 },
+  { id: 18, mediaId: 'm9', author: "Tech Times", text: "It changed action movies forever. The bullet time is still iconic.", score: 90 },
+  { id: 19, mediaId: 'm9', author: "Retro Review", text: "A cyberpunk classic that holds up incredibly well decades later.", score: 85 },
+  { id: 20, mediaId: 'm10', author: "Action Junkie", text: "Two straight hours of high-octane vehicular carnage. Perfect.", score: 98 },
+  { id: 21, mediaId: 'm10', author: "Wasteland Weekly", text: "A visual poem of fire and blood.", score: 96 },
+
+  // TV Shows
+  { id: 3, mediaId: 't1', author: "TV Guide", text: "Genuinely gripping television that defined an era.", score: 100 },
+  { id: 22, mediaId: 't1', author: "Binge Watcher", text: "Walter White's descent is the greatest character arc in TV history.", score: 98 },
+  { id: 23, mediaId: 't2', author: "Fantasy Realm", text: "Epic battles, political intrigue, and dragons. Television at its grandest.", score: 90 },
+  { id: 24, mediaId: 't2', author: "The Watcher", text: "Despite a controversial ending, the journey was unparalleled.", score: 85 },
+  { id: 25, mediaId: 't3', author: "Nostalgia Nerd", text: "A perfect love letter to 80s sci-fi and horror.", score: 92 },
+  { id: 26, mediaId: 't3', author: "Streaming Guide", text: "The kids are great, but the monsters steal the show.", score: 88 },
+  { id: 27, mediaId: 't4', author: "Corporate Times", text: "Shakespearean family drama mixed with cutthroat modern capitalism.", score: 97 },
+  { id: 28, mediaId: 't4', author: "Drama Daily", text: "Every line of dialogue is a weapon. Brilliant writing.", score: 95 },
+  { id: 29, mediaId: 't5', author: "Gamer's Edge", text: "The gold standard for video game adaptations.", score: 98 },
+  { id: 30, mediaId: 't5', author: "Apocalypse Now", text: "Heartbreaking and terrifying in equal measure.", score: 94 },
+  { id: 31, mediaId: 't6', author: "History Buff", text: "A harrowing, meticulously researched look at a global tragedy.", score: 99 },
+  { id: 32, mediaId: 't6', author: "Mini-Series Monthly", text: "Tense, terrifying, and completely essential viewing.", score: 96 },
+  { id: 33, mediaId: 't7', author: "Crime TV", text: "The most realistic portrayal of urban decay and police work ever filmed.", score: 100 },
+  { id: 34, mediaId: 't7', author: "City Paper", text: "It's not just a show, it's a sociological study.", score: 95 },
+  { id: 35, mediaId: 't8', author: "Mobster Weekly", text: "The show that started the Golden Age of Television.", score: 95 },
+  { id: 36, mediaId: 't8', author: "Classic TV", text: "Tony Soprano remains the ultimate anti-hero.", score: 90 }
 ];
 
 export const newsArticles = [

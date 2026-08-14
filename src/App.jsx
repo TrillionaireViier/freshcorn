@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './index.css';
-import { movies, tvShows, newsArticles } from './data';
+import { movies, tvShows, newsArticles, reviews } from './data';
 
 // SVG Icons
 const FreshPopcorn = () => (
@@ -173,6 +173,28 @@ function App() {
                 <p style={{ fontWeight: 600, fontSize: '1.1rem', marginTop: '5px' }}>{selectedMedia.cast.join(', ')}</p>
               </div>
             </div>
+          </div>
+
+          <div className="reviews-section" style={{ maxWidth: '1400px', margin: '4rem auto 0', padding: '3rem 4rem' }}>
+            <h2 className="section-title">Verified Reviews</h2>
+            {reviews.filter(r => r.mediaId === selectedMedia.id).length > 0 ? (
+              <div className="reviews-grid">
+                {reviews.filter(r => r.mediaId === selectedMedia.id).map(review => (
+                  <div key={review.id} className="review-card">
+                    <div className="review-header">
+                      <span className="review-author">{review.author}</span>
+                      <div className="review-score">
+                        {review.score >= 80 ? <FreshPopcorn /> : <RottenTomato />}
+                        <span className={review.score >= 80 ? 'score-fresh' : 'score-rotten'}>{review.score}%</span>
+                      </div>
+                    </div>
+                    <p className="review-text">"{review.text}"</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p style={{ color: 'var(--text-muted)' }}>No reviews available yet for this title.</p>
+            )}
           </div>
         </div>
       );
