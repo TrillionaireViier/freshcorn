@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './index.css';
-import { movies, tvShows, cartoons, newsArticles, reviews } from './data';
+import { movies, tvShows, cartoons, newsArticles, reviews as initialReviews } from './data';
+import AdminPanel from './AdminPanel';
+import UserPanel from './UserPanel';
 
 // SVG Icons
 const FreshPopcorn = () => (
@@ -105,7 +107,25 @@ const MediaGrid = ({ title, items, onSelect }) => (
 function App() {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [authMode, setAuthMode] = useState(null); // 'signin', 'signup', or null
-  const [activeTab, setActiveTab] = useState('home'); // 'home', 'news', 'movies', 'tvshows'
+  const [activeTab, setActiveTab] = useState('home'); // 'home', 'news', 'movies', 'tvshows', 'admin', 'profile'
+  const [localReviews, setLocalReviews] = useState(initialReviews);
+  const [reviewForm, setReviewForm] = useState({ text: '', score: 50 });
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    if (!reviewForm.text.trim()) return;
+    
+    const newReview = {
+      id: Date.now(),
+      mediaId: selectedMedia.id,
+      author: "Danila Vier (You)",
+      text: reviewForm.text,
+      score: parseInt(reviewForm.score)
+    };
+    
+    setLocalReviews([newReview, ...localReviews]);
+    setReviewForm({ text: '', score: 50 });
+  };
 
   const heroMovie = movies[0]; // Inception
   const inTheaters = [...movies, ...cartoons].filter(m => m.isInTheaters);
@@ -176,10 +196,40 @@ function App() {
           </div>
 
           <div className="reviews-section" style={{ maxWidth: '1400px', margin: '4rem auto 0', padding: '3rem 4rem' }}>
+            
+            {/* Write a Review Section */}
+            <div className="glass" style={{ padding: '2rem', marginBottom: '3rem', borderLeft: '4px solid var(--accent-fresh)' }}>
+              <h3 style={{ color: 'var(--text-main)', marginBottom: '1.5rem' }}>Write a Review</h3>
+              <form onSubmit={handleReviewSubmit}>
+                <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem' }}>
+                  <div style={{ flex: 1 }}>
+                    <label className="form-label">Your Rating: <span style={{ color: reviewForm.score >= 80 ? 'var(--accent-fresh)' : 'var(--accent-rotten)', fontWeight: 'bold' }}>{reviewForm.score}%</span></label>
+                    <input 
+                      type="range" min="0" max="100" 
+                      value={reviewForm.score} 
+                      onChange={(e) => setReviewForm({...reviewForm, score: e.target.value})}
+                      style={{ width: '100%', marginTop: '10px' }}
+                    />
+                  </div>
+                </div>
+                <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                  <textarea 
+                    className="form-input" rows="4" 
+                    placeholder="What did you think about this title?" 
+                    value={reviewForm.text}
+                    onChange={(e) => setReviewForm({...reviewForm, text: e.target.value})}
+                    style={{ resize: 'vertical' }}
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="btn-primary">Post Review</button>
+              </form>
+            </div>
+
             <h2 className="section-title">Verified Reviews</h2>
-            {reviews.filter(r => r.mediaId === selectedMedia.id).length > 0 ? (
+            {localReviews.filter(r => r.mediaId === selectedMedia.id).length > 0 ? (
               <div className="reviews-grid">
-                {reviews.filter(r => r.mediaId === selectedMedia.id).map(review => (
+                {localReviews.filter(r => r.mediaId === selectedMedia.id).map(review => (
                   <div key={review.id} className="review-card">
                     <div className="review-header">
                       <span className="review-author">{review.author}</span>
@@ -230,6 +280,14 @@ function App() {
 
     if (activeTab === 'cartoons') {
       return <MediaGrid title="Animated Classics" items={cartoons} onSelect={setSelectedMedia} />;
+    }
+
+    if (activeTab === 'admin') {
+      return <AdminPanel onClose={() => setActiveTab('home')} />;
+    }
+
+    if (activeTab === 'profile') {
+      return <UserPanel onClose={() => setActiveTab('home')} />;
     }
 
     if (['about', 'contact', 'privacy', 'terms'].includes(activeTab)) {
@@ -486,9 +544,15 @@ const Navbar = ({ onNavigate, onAuth }) => (
       <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('cartoons'); }}>Cartoons</a>
       <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('news'); }}>News</a>
     </div>
-    <div className="nav-actions">
-      <button className="btn-outline" onClick={() => onAuth('signin')}>Sign In</button>
-      <button className="btn-primary" style={{ marginTop: 0, padding: '8px 20px' }} onClick={() => onAuth('signup')}>Sign Up</button>
+    <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+      <button className="btn-outline" onClick={() => onNavigate('admin')} style={{ padding: '6px 12px', fontSize: '0.8rem', borderColor: 'var(--accent-rotten)', color: 'var(--accent-rotten)' }}>Admin Panel</button>
+      <div 
+        onClick={() => onNavigate('profile')}
+        style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--accent-fresh)', display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'bold', color: '#000', cursor: 'pointer', border: '2px solid #fff' }}
+        title="My Profile"
+      >
+        DV
+      </div>
     </div>
   </nav>
 );
