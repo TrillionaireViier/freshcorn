@@ -435,16 +435,6 @@ const MediaDetails = ({ localReviews, setLocalReviews }) => {
               >
                 ▶ {t('watchTrailer')}
               </a>
-            )}
-            <a 
-              href={`https://www.themoviedb.org/search?query=${encodeURIComponent(selectedMedia.title)}`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-outline"
-              style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
-            >
-              ℹ️ TMDb
-            </a>
           </div>
           
           <div style={{ marginTop: '2rem' }}>
