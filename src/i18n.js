@@ -28,7 +28,8 @@ export const translations = {
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     allRightsReserved: "All rights reserved.",
-    tagline: "A premium movie rating clone concept."
+    tagline: "A premium movie rating clone concept.",
+    watchTrailer: "Watch Trailer"
   },
   uk: {
     movies: "Фільми",
@@ -59,7 +60,8 @@ export const translations = {
     privacyPolicy: "Політика конфіденційності",
     termsOfService: "Умови використання",
     allRightsReserved: "Всі права захищені.",
-    tagline: "Преміальний концепт рейтингу кіно."
+    tagline: "Преміальний концепт рейтингу кіно.",
+    watchTrailer: "Дивитись Трейлер"
   },
   fr: {
     movies: "Films",
@@ -90,7 +92,8 @@ export const translations = {
     privacyPolicy: "Confidentialité",
     termsOfService: "Conditions d'utilisation",
     allRightsReserved: "Tous droits réservés.",
-    tagline: "Un concept premium de notation de films."
+    tagline: "Un concept premium de notation de films.",
+    watchTrailer: "Bande-annonce"
   },
   de: {
     movies: "Filme",
@@ -121,7 +124,8 @@ export const translations = {
     privacyPolicy: "Datenschutz",
     termsOfService: "Nutzungsbedingungen",
     allRightsReserved: "Alle Rechte vorbehalten.",
-    tagline: "Ein Premium-Filmbewertungskonzept."
+    tagline: "Ein Premium-Filmbewertungskonzept.",
+    watchTrailer: "Trailer Ansehen"
   },
   es: {
     movies: "Películas",
@@ -152,7 +156,8 @@ export const translations = {
     privacyPolicy: "Privacidad",
     termsOfService: "Términos de servicio",
     allRightsReserved: "Todos los derechos reservados.",
-    tagline: "Un concepto premium de calificación."
+    tagline: "Un concepto premium de calificación.",
+    watchTrailer: "Ver Tráiler"
   },
   it: {
     movies: "Film",
@@ -183,6 +188,7 @@ export const translations = {
     privacyPolicy: "Privacy",
     termsOfService: "Condizioni d'uso",
     allRightsReserved: "Tutti i diritti riservati.",
-    tagline: "Un concetto premium di recensioni."
+    tagline: "Un concetto premium di recensioni.",
+    watchTrailer: "Guarda Trailer"
   }
 };

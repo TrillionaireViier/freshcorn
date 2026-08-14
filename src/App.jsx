@@ -358,6 +358,27 @@ const MediaDetails = ({ localReviews, setLocalReviews }) => {
             {selectedMedia.synopsis}
           </p>
           
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '15px' }}>
+            <a 
+              href={`https://www.youtube.com/results?search_query=${encodeURIComponent(selectedMedia.title + ' ' + selectedMedia.year + ' trailer')}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-primary"
+              style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+            >
+              ▶ {t('watchTrailer')}
+            </a>
+            <a 
+              href={`https://www.imdb.com/find?q=${encodeURIComponent(selectedMedia.title)}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-outline"
+              style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+            >
+              ℹ️ IMDb
+            </a>
+          </div>
+          
           <div style={{ marginTop: '2rem' }}>
             <span className="score-label">{t('director')}</span>
             <p style={{ fontWeight: 600, fontSize: '1.1rem', marginTop: '5px' }}>{selectedMedia.director}</p>
