@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const UserPanel = ({ onClose }) => {
+const UserPanel = () => {
   const [activeMenu, setActiveMenu] = useState('profile');
+  const navigate = useNavigate();
 
   return (
     <div className="details-container animate-fade-in" style={{ padding: '8rem 4rem 4rem', minHeight: '80vh', maxWidth: '1200px', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
         <h1 className="hero-title" style={{ fontSize: '3rem', margin: 0 }}>My Account</h1>
-        <button className="btn-outline" onClick={onClose}>Back to Home</button>
+        <button className="btn-outline" onClick={() => navigate('/')}>Back to Home</button>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', gap: '3rem' }}>
@@ -84,7 +86,7 @@ const UserPanel = ({ onClose }) => {
             <div className="animate-fade-in">
               <h2 style={{ color: 'var(--text-main)', marginBottom: '2rem' }}>My Watchlist</h2>
               <p style={{ color: 'var(--text-muted)' }}>You haven't added any movies to your watchlist yet.</p>
-              <button className="btn-outline" style={{ marginTop: '1rem' }} onClick={onClose}>Explore Movies</button>
+              <button className="btn-outline" style={{ marginTop: '1rem' }} onClick={() => navigate('/movies')}>Explore Movies</button>
             </div>
           )}
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ADMIN_OPTIONS = [
   // SECURITY
@@ -62,8 +63,9 @@ const ADMIN_OPTIONS = [
   { id: 50, label: "Sell Anonymized Data", desc: "Enable API endpoint for data brokers", category: "Monetization" },
 ];
 
-const AdminPanel = ({ onClose }) => {
+const AdminPanel = () => {
   const [toggles, setToggles] = useState({});
+  const navigate = useNavigate();
 
   const handleToggle = (id) => {
     setToggles(prev => ({ ...prev, [id]: !prev[id] }));
@@ -75,7 +77,7 @@ const AdminPanel = ({ onClose }) => {
     <div className="details-container animate-fade-in" style={{ padding: '8rem 4rem 4rem', minHeight: '80vh', maxWidth: '1400px', margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '3rem' }}>
         <h1 className="hero-title" style={{ fontSize: '3rem', margin: 0 }}>Command Center</h1>
-        <button className="btn-outline" onClick={onClose}>Exit Panel</button>
+        <button className="btn-outline" onClick={() => navigate('/')}>Exit Panel</button>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', gap: '3rem' }}>
