@@ -97,7 +97,7 @@ export const tvShows = [
     genre: "Crime / Drama", criticsScore: 96, audienceScore: 97,
     synopsis: "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future.",
     director: "Vince Gilligan", cast: ["Bryan Cranston", "Aaron Paul", "Anna Gunn"],
-    poster: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/501/1253519.jpg",
     backdrop: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -106,7 +106,7 @@ export const tvShows = [
     genre: "Action / Adventure", criticsScore: 89, audienceScore: 85,
     synopsis: "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
     director: "David Benioff, D.B. Weiss", cast: ["Emilia Clarke", "Peter Dinklage", "Kit Harington"],
-    poster: "https://images.unsplash.com/photo-1544604862-23c2a68884d5?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/498/1245274.jpg",
     backdrop: "https://images.unsplash.com/photo-1544604862-23c2a68884d5?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -115,7 +115,7 @@ export const tvShows = [
     genre: "Drama / Fantasy", criticsScore: 92, audienceScore: 90,
     synopsis: "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.",
     director: "The Duffer Brothers", cast: ["Millie Bobby Brown", "Finn Wolfhard", "Winona Ryder"],
-    poster: "https://images.unsplash.com/photo-1618519764620-7403abdbdf9c?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/595/1489169.jpg",
     backdrop: "https://images.unsplash.com/photo-1618519764620-7403abdbdf9c?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -124,7 +124,7 @@ export const tvShows = [
     genre: "Drama", criticsScore: 95, audienceScore: 90,
     synopsis: "The Roy family is known for controlling the biggest media and entertainment company in the world. However, their world changes when their father steps down from the company.",
     director: "Jesse Armstrong", cast: ["Brian Cox", "Jeremy Strong", "Sarah Snook"],
-    poster: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/453/1134275.jpg",
     backdrop: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80",
     isTrending: false, isInTheaters: false
   },
@@ -133,7 +133,7 @@ export const tvShows = [
     genre: "Action / Adventure", criticsScore: 96, audienceScore: 89,
     synopsis: "After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.",
     director: "Craig Mazin, Neil Druckmann", cast: ["Pedro Pascal", "Bella Ramsey", "Gabriel Luna"],
-    poster: "https://images.unsplash.com/photo-1601516246473-b3eb2b0699f8?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/563/1409008.jpg",
     backdrop: "https://images.unsplash.com/photo-1601516246473-b3eb2b0699f8?w=1600&q=80",
     isTrending: true, isInTheaters: false
   },
@@ -142,7 +142,7 @@ export const tvShows = [
     genre: "Drama / History", criticsScore: 95, audienceScore: 97,
     synopsis: "In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world's worst man-made catastrophes.",
     director: "Craig Mazin", cast: ["Jared Harris", "Stellan Skarsgård", "Emily Watson"],
-    poster: "https://images.unsplash.com/photo-1555580399-52e807185202?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/193/482599.jpg",
     backdrop: "https://images.unsplash.com/photo-1555580399-52e807185202?w=1600&q=80",
     isTrending: false, isInTheaters: false
   },
@@ -151,7 +151,7 @@ export const tvShows = [
     genre: "Crime / Drama", criticsScore: 94, audienceScore: 96,
     synopsis: "The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.",
     director: "David Simon", cast: ["Dominic West", "Lance Reddick", "Sonja Sohn"],
-    poster: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/504/1260189.jpg",
     backdrop: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1600&q=80",
     isTrending: false, isInTheaters: false
   },
@@ -160,7 +160,7 @@ export const tvShows = [
     genre: "Crime / Drama", criticsScore: 92, audienceScore: 93,
     synopsis: "New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state.",
     director: "David Chase", cast: ["James Gandolfini", "Lorraine Bracco", "Edie Falco"],
-    poster: "https://images.unsplash.com/photo-1520627581177-3860bbbc4123?w=800&q=80",
+    poster: "https://static.tvmaze.com/uploads/images/original_untouched/4/11341.jpg",
     backdrop: "https://images.unsplash.com/photo-1520627581177-3860bbbc4123?w=1600&q=80",
     isTrending: false, isInTheaters: false
   }
