@@ -166,6 +166,63 @@ export const tvShows = [
   }
 ];
 
+export const cartoons = [
+  {
+    id: 'c1', title: "Arcane", year: 2021, duration: "1 Season", rating: "TV-14",
+    genre: "Animation / Action", criticsScore: 100, audienceScore: 96,
+    synopsis: "Set in utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League champions-and the power that will tear them apart.",
+    director: "Pascal Charrue, Arnaud Delord", cast: ["Hailee Steinfeld", "Ella Purnell", "Kevin Alejandro"],
+    poster: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80",
+    isTrending: true, isInTheaters: false
+  },
+  {
+    id: 'c2', title: "Avatar: The Last Airbender", year: 2005, duration: "3 Seasons", rating: "TV-Y7",
+    genre: "Animation / Action", criticsScore: 100, audienceScore: 98,
+    synopsis: "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar.",
+    director: "Michael Dante DiMartino, Bryan Konietzko", cast: ["Zach Tyler Eisen", "Mae Whitman", "Jack De Sena"],
+    poster: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1478479405421-ce83c92fb3ba?w=1600&q=80",
+    isTrending: true, isInTheaters: false
+  },
+  {
+    id: 'c3', title: "Rick and Morty", year: 2013, duration: "7 Seasons", rating: "TV-14",
+    genre: "Animation / Sci-Fi", criticsScore: 90, audienceScore: 88,
+    synopsis: "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
+    director: "Justin Roiland, Dan Harmon", cast: ["Justin Roiland", "Chris Parnell", "Spencer Grammer"],
+    poster: "https://images.unsplash.com/photo-1563121516-24ee8dfb5cb2?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1563121516-24ee8dfb5cb2?w=1600&q=80",
+    isTrending: true, isInTheaters: false
+  },
+  {
+    id: 'c4', title: "Inside Out", year: 2015, duration: "1h 35m", rating: "PG",
+    genre: "Animation / Adventure", criticsScore: 98, audienceScore: 89,
+    synopsis: "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+    director: "Pete Docter", cast: ["Amy Poehler", "Bill Hader", "Lewis Black"],
+    poster: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=1600&q=80",
+    isTrending: false, isInTheaters: false
+  },
+  {
+    id: 'c5', title: "Toy Story", year: 1995, duration: "1h 21m", rating: "G",
+    genre: "Animation / Adventure", criticsScore: 100, audienceScore: 92,
+    synopsis: "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+    director: "John Lasseter", cast: ["Tom Hanks", "Tim Allen", "Don Rickles"],
+    poster: "https://images.unsplash.com/photo-1596728464673-db0f61406c11?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1596728464673-db0f61406c11?w=1600&q=80",
+    isTrending: false, isInTheaters: false
+  },
+  {
+    id: 'c6', title: "Spirited Away", year: 2001, duration: "2h 5m", rating: "PG",
+    genre: "Animation / Fantasy", criticsScore: 97, audienceScore: 96,
+    synopsis: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+    director: "Hayao Miyazaki", cast: ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki"],
+    poster: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=800&q=80",
+    backdrop: "https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?w=1600&q=80",
+    isTrending: false, isInTheaters: true
+  }
+];
+
 export const reviews = [
   // Movies
   { id: 1, mediaId: 'm1', author: "Daily Cinema", text: "A breathtaking visual masterpiece that redefines the genre.", score: 95 },
@@ -205,7 +262,21 @@ export const reviews = [
   { id: 33, mediaId: 't7', author: "Crime TV", text: "The most realistic portrayal of urban decay and police work ever filmed.", score: 100 },
   { id: 34, mediaId: 't7', author: "City Paper", text: "It's not just a show, it's a sociological study.", score: 95 },
   { id: 35, mediaId: 't8', author: "Mobster Weekly", text: "The show that started the Golden Age of Television.", score: 95 },
-  { id: 36, mediaId: 't8', author: "Classic TV", text: "Tony Soprano remains the ultimate anti-hero.", score: 90 }
+  { id: 36, mediaId: 't8', author: "Classic TV", text: "Tony Soprano remains the ultimate anti-hero.", score: 90 },
+
+  // Cartoons
+  { id: 37, mediaId: 'c1', author: "Animation Nation", text: "A visually breathtaking masterpiece that transcends video game adaptations.", score: 100 },
+  { id: 38, mediaId: 'c1', author: "Geek Digest", text: "Incredible world-building and gut-wrenching emotional arcs.", score: 98 },
+  { id: 39, mediaId: 'c2', author: "TV Guide", text: "The greatest animated series ever created. Flawless character development.", score: 100 },
+  { id: 40, mediaId: 'c2', author: "Fantasy Realm", text: "A masterclass in storytelling and world-building.", score: 99 },
+  { id: 41, mediaId: 'c3', author: "Sci-Fi Digest", text: "Hilarious, deeply cynical, and brilliantly inventive.", score: 90 },
+  { id: 42, mediaId: 'c3', author: "Comedy Central", text: "The sharpest writing on television right now.", score: 88 },
+  { id: 43, mediaId: 'c4', author: "Daily Cinema", text: "A profoundly moving exploration of human emotions.", score: 98 },
+  { id: 44, mediaId: 'c4', author: "Family Flicks", text: "Pixar at its absolute best. Tears were shed.", score: 96 },
+  { id: 45, mediaId: 'c5', author: "Retro Review", text: "The movie that started the CG revolution. Still a classic.", score: 100 },
+  { id: 46, mediaId: 'c5', author: "Kids Weekly", text: "To infinity and beyond! A timeless masterpiece.", score: 95 },
+  { id: 47, mediaId: 'c6', author: "Global Cinema", text: "Miyazaki's magnum opus is a mesmerizing journey.", score: 99 },
+  { id: 48, mediaId: 'c6', author: "IndieWire", text: "A beautiful, enchanting, and terrifying fairy tale.", score: 96 }
 ];
 
 export const newsArticles = [

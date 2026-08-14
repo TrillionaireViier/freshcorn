@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './index.css';
-import { movies, tvShows, newsArticles, reviews } from './data';
+import { movies, tvShows, cartoons, newsArticles, reviews } from './data';
 
 // SVG Icons
 const FreshPopcorn = () => (
@@ -108,8 +108,8 @@ function App() {
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'news', 'movies', 'tvshows'
 
   const heroMovie = movies[0]; // Inception
-  const inTheaters = movies.filter(m => m.isInTheaters);
-  const trending = [...movies, ...tvShows].filter(m => m.isTrending).slice(0, 5);
+  const inTheaters = [...movies, ...cartoons].filter(m => m.isInTheaters);
+  const trending = [...movies, ...tvShows, ...cartoons].filter(m => m.isTrending).slice(0, 5);
 
   const getScoreIcon = (score) => score >= 80 ? <FreshPopcorn /> : <RottenTomato />;
 
@@ -228,6 +228,10 @@ function App() {
       return <MediaGrid title="All TV Shows" items={tvShows} onSelect={setSelectedMedia} />;
     }
 
+    if (activeTab === 'cartoons') {
+      return <MediaGrid title="Animated Classics" items={cartoons} onSelect={setSelectedMedia} />;
+    }
+
     if (['about', 'contact', 'privacy', 'terms'].includes(activeTab)) {
       const renderInfoPage = () => {
         switch (activeTab) {
@@ -236,15 +240,16 @@ function App() {
               <div className="info-content">
                 <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200&q=80" alt="About Cinema" style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '12px', marginBottom: '2rem' }} />
                 <h2 style={{ color: 'var(--text-main)', marginBottom: '1rem' }}>Our Mission</h2>
-                <p>FreshPopcorn was founded in 2026 with a single goal: to provide the most authentic, untampered, and transparent movie ratings on the web. We believe that cinema is an art form that deserves honest critique from both seasoned professionals and everyday viewers.</p>
+                <p style={{ marginBottom: '1rem' }}>FreshPopcorn was founded in 2026 with a single goal: to provide the most authentic, untampered, and transparent movie ratings on the web. We believe that cinema is an art form that deserves honest critique from both seasoned professionals and everyday viewers. In an era where algorithmic manipulation and review-bombing dictate what we watch, we wanted to build a sanctuary for true cinephiles.</p>
+                <p>Our team consists of passionate film critics, data scientists, and engineers dedicated to ensuring that every score you see is a reflection of genuine human opinion. We partner directly with verified theaters and streaming platforms to validate our audience metrics, ensuring that every vote counts.</p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
                   <div className="glass" style={{ padding: '1.5rem' }}>
                     <h3 style={{ color: 'var(--accent-fresh)', marginBottom: '10px' }}>Critics Consensus</h3>
-                    <p style={{ fontSize: '0.9rem' }}>We aggregate reviews from top-tier publications globally to give you a definitive score.</p>
+                    <p style={{ fontSize: '0.9rem' }}>We aggregate reviews from thousands of top-tier, verified publications globally to give you a definitive score. Our editorial team handpicks featured reviews to provide nuanced perspectives on every release.</p>
                   </div>
                   <div className="glass" style={{ padding: '1.5rem' }}>
                     <h3 style={{ color: 'var(--accent-gold)', marginBottom: '10px' }}>Audience Voice</h3>
-                    <p style={{ fontSize: '0.9rem' }}>Verified ticket buyers cast their votes, ensuring the audience score is never manipulated.</p>
+                    <p style={{ fontSize: '0.9rem' }}>Verified ticket buyers and streaming subscribers cast their votes, ensuring the audience score is never manipulated by bots. Real people, real opinions, real scores.</p>
                   </div>
                 </div>
               </div>
@@ -254,14 +259,20 @@ function App() {
               <div className="info-content" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
                 <div>
                   <h2 style={{ color: 'var(--text-main)', marginBottom: '1rem' }}>Get in Touch</h2>
-                  <p style={{ marginBottom: '2rem' }}>Whether you have a technical issue, a business inquiry, or just want to talk about movies, our team is here for you.</p>
+                  <p style={{ marginBottom: '2rem' }}>Whether you have a technical issue, a business inquiry, or just want to talk about movies, our team is here for you. We aim to respond to all inquiries within 24 hours.</p>
                   <div style={{ marginBottom: '1.5rem' }}>
                     <strong>📍 Headquarters:</strong><br/>
-                    123 Cinema Boulevard, Suite 400<br/>Los Angeles, CA 90028
+                    123 Cinema Boulevard, Suite 400<br/>Los Angeles, CA 90028<br/>
+                    <em>Open Monday-Friday, 9AM-5PM PST</em>
                   </div>
                   <div style={{ marginBottom: '1.5rem' }}>
                     <strong>📧 Email:</strong><br/>
-                    <a href="mailto:support@freshpopcorn.com" style={{ color: 'var(--accent-blue)' }}>support@freshpopcorn.com</a>
+                    <a href="mailto:support@freshpopcorn.com" style={{ color: 'var(--accent-blue)' }}>support@freshpopcorn.com</a><br/>
+                    <a href="mailto:press@freshpopcorn.com" style={{ color: 'var(--accent-blue)' }}>press@freshpopcorn.com</a>
+                  </div>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <strong>📞 Phone:</strong><br/>
+                    +1 (555) 019-2026
                   </div>
                 </div>
                 <div className="glass" style={{ padding: '2rem' }}>
@@ -273,7 +284,15 @@ function App() {
                       <input type="email" className="form-input" placeholder="Your Email" />
                     </div>
                     <div className="form-group">
-                      <textarea className="form-input" rows="4" placeholder="How can we help?" style={{ resize: 'vertical' }}></textarea>
+                      <select className="form-input" style={{ appearance: 'none' }}>
+                        <option value="">Select Topic</option>
+                        <option value="support">Technical Support</option>
+                        <option value="press">Press & Media</option>
+                        <option value="business">Business Inquiry</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <textarea className="form-input" rows="5" placeholder="How can we help?" style={{ resize: 'vertical' }}></textarea>
                     </div>
                     <button className="btn-primary" style={{ width: '100%', marginTop: '10px' }}>Send Message</button>
                   </form>
@@ -285,13 +304,19 @@ function App() {
               <div className="info-content">
                 <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', display: 'inline-block', borderRadius: '20px', fontSize: '0.8rem', marginBottom: '1.5rem', color: 'var(--accent-fresh)' }}>Last Updated: August 14, 2026</div>
                 <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>1. Information We Collect</h3>
-                <p>We only collect information necessary to provide you with the best possible experience. This includes your email address when you sign up, and your voting history to personalize recommendations.</p>
+                <p style={{ marginBottom: '1rem' }}>We only collect information necessary to provide you with the best possible experience. This includes your email address when you sign up, your IP address for localized content, and your voting history to personalize recommendations.</p>
+                <p>We do not collect sensitive personal data such as financial information or government-issued IDs. Any payment processing for premium features is handled by certified third-party vendors.</p>
                 
                 <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>2. How We Use Your Data</h3>
-                <p>Your data is used strictly to improve our algorithms and secure your account. <strong>We do not sell your personal data to third-party ad networks.</strong></p>
+                <p style={{ marginBottom: '1rem' }}>Your data is used strictly to improve our algorithms, secure your account, and provide customized movie suggestions based on your tastes. <strong>We do not sell your personal data to third-party ad networks under any circumstances.</strong></p>
+                <p>Aggregated, anonymized data may be used to publish reports on general viewership trends, but these reports will never contain personally identifiable information.</p>
 
                 <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>3. Data Security</h3>
-                <p>We employ industry-standard AES-256 encryption for all user data stored on our servers. Passwords are hashed and salted.</p>
+                <p style={{ marginBottom: '1rem' }}>We employ industry-standard AES-256 encryption for all user data stored on our servers. Passwords are hashed and salted using bcrypt algorithms, meaning even we cannot see your password.</p>
+                <p>Our infrastructure undergoes regular penetration testing by independent cybersecurity firms to ensure your data remains secure against emerging threats.</p>
+
+                <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>4. Your Rights</h3>
+                <p>You have the right to request a complete export of your personal data at any time. You may also request permanent deletion of your account and all associated data by contacting our privacy team.</p>
               </div>
             );
           case 'terms':
@@ -299,17 +324,23 @@ function App() {
               <div className="info-content">
                 <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', display: 'inline-block', borderRadius: '20px', fontSize: '0.8rem', marginBottom: '1.5rem', color: 'var(--accent-rotten)' }}>Effective Date: August 14, 2026</div>
                 <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>1. Acceptance of Terms</h3>
-                <p>By accessing or using FreshPopcorn, you agree to be bound by these terms. If you disagree with any part of the terms, you may not access the service.</p>
+                <p>By accessing or using FreshPopcorn, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access the service. These terms apply to all visitors, users, and others who access or use the Service.</p>
                 
-                <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>2. User Conduct</h3>
+                <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>2. User Conduct and Content</h3>
+                <p style={{ marginBottom: '1rem' }}>You are solely responsible for the content of your reviews and comments. By posting on FreshPopcorn, you grant us a non-exclusive, royalty-free license to use, reproduce, and display that content.</p>
                 <ul style={{ paddingLeft: '20px', marginBottom: '1rem', color: 'var(--text-muted)' }}>
-                  <li style={{ marginBottom: '8px' }}>Reviews must be constructive and relevant to the media.</li>
-                  <li style={{ marginBottom: '8px' }}>Hate speech, harassment, and spam will result in immediate account termination.</li>
-                  <li style={{ marginBottom: '8px' }}>Automated scraping of our scores is strictly prohibited without an API license.</li>
+                  <li style={{ marginBottom: '8px' }}>Reviews must be constructive and strictly relevant to the media being discussed.</li>
+                  <li style={{ marginBottom: '8px' }}>Hate speech, harassment, discriminatory language, and spam will result in immediate and permanent account termination.</li>
+                  <li style={{ marginBottom: '8px' }}>Review-bombing (coordinating mass negative or positive reviews without watching the media) is strictly prohibited.</li>
+                  <li style={{ marginBottom: '8px' }}>Automated scraping of our scores, reviews, or metadata is strictly prohibited without an official API license.</li>
                 </ul>
 
                 <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>3. Intellectual Property</h3>
-                <p>The FreshPopcorn logo, brand, and proprietary scoring algorithms are the exclusive property of FreshPopcorn Inc.</p>
+                <p style={{ marginBottom: '1rem' }}>The FreshPopcorn logo, brand, layout, and proprietary scoring algorithms are the exclusive property of FreshPopcorn Inc. and are protected by international copyright laws.</p>
+                <p>Movie posters, backdrops, and promotional materials displayed on the site remain the property of their respective studios and are used here strictly under fair use principles for the purpose of review and commentary.</p>
+                
+                <h3 style={{ color: 'var(--text-main)', marginBottom: '10px', marginTop: '20px' }}>4. Limitation of Liability</h3>
+                <p>FreshPopcorn shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your access to or use of, or inability to access or use the service.</p>
               </div>
             );
           default:
@@ -452,6 +483,7 @@ const Navbar = ({ onNavigate, onAuth }) => (
     <div className="nav-links">
       <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('movies'); }}>Movies</a>
       <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('tvshows'); }}>TV Shows</a>
+      <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('cartoons'); }}>Cartoons</a>
       <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); onNavigate('news'); }}>News</a>
     </div>
     <div className="nav-actions">
